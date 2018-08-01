@@ -9,7 +9,7 @@ import util.ArrayUtil;
  * @author Bhagat
  *
  */
-public class Test {
+public class ArrayListTest {
 
 	/**
 	 * The main method to run test code
