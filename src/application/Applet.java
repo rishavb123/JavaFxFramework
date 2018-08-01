@@ -1,11 +1,11 @@
+/**
+ * 
+ */
 package application;
-
-import java.util.concurrent.Callable;
 
 import configurations.Constants;
 import framework.State;
 import javafx.animation.AnimationTimer;
-import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -14,85 +14,51 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.InputEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import util.CallableUtil;
+import javafx.scene.paint.Color;
+import webapplet.FXApplet;
 
 /**
- * The Main Application of the game
+ * Main Application class for web applets
  * @author Bhagat
  *
  */
-public class App extends Application implements EventHandler<InputEvent> {
-		
-	private GraphicsContext gc;
+public abstract class Applet extends FXApplet implements EventHandler<InputEvent>{
+
+	private static final long serialVersionUID = -1146021402964369329L;
+	
+	protected GraphicsContext gc;
 	private AnimateObjects animate;
 	private Canvas canvas;
-	private Stage stage;
 	
 	private static double width = Constants.width;
 	private static double height = Constants.height;
-	
-	private static Callable<Void> startFunc;
-	private static Callable<Void> nextFunc;
-	private static Callable<Void> stopFunc;
 		
 	/**
-	 * Method that gets called when the application is started
-	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 * @see webapplet.FXApplet#initApplet()
 	 */
 	@Override
-	public final void start(Stage stage) throws Exception 
+	public void initApplet()
 	{
-		this.stage = stage;
-		
 		Group root = new Group();
 		canvas = new Canvas(width, height);
 		root.getChildren().add(canvas);
 		
 		gc = canvas.getGraphicsContext2D();
-		
+		gc.setFill(Color.BLUE);
 		Scene scene = new Scene(root);
-		stage.setScene(scene);
 		scene.addEventHandler(KeyEvent.ANY,this);
 		scene.addEventHandler(MouseEvent.ANY, this);
-		
+
 		animate = new AnimateObjects();
 		animate.start();
-		
-		stage.show();
-		
-		CallableUtil.run(startFunc);
-		
+				
+		//startFunc();
+		gc.fillRect(10, 10, 100, 100);
 	}
+
 	
-	@Override
-	public void stop()
-	{
-		CallableUtil.run(stopFunc);
-	}
-	
-	/**
-	 * starts the application
-	 * @param start method to call on start
-	 * @param next method to call every frame
-	 * @param args command line arguments
-	 */
-	public static void begin(Callable<Void> start, Callable<Void> next, Callable<Void> stop, String[] args)
-	{
-		startFunc = start;
-		nextFunc = next;
-		stopFunc = stop;
-		main(args);
-	}
-	
-	/**
-	 * Sets the title or header of the application window
-	 * @param title the title that will be set onto the window
-	 */
-	public final void setTitle(String title)
-	{
-		stage.setTitle(title);
-	}
+	public abstract void startFunc();
+	public abstract void nextFunc();
 	
 	/**
 	 * Method to handle an Events
@@ -134,15 +100,6 @@ public class App extends Application implements EventHandler<InputEvent> {
 			}
 		}
 	}
-	
-	/**
-	 * Main method calling launch to start the app
-	 * @param args Command Line Arguments
-	 */
-	public final static void main(String[] args)
-	{
-		launch(args);
-	}
 		
 	/**
 	 * animate objects is to create a method that runs every frame
@@ -157,7 +114,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 		public final void handle(long time)
 		{
 			State.gameState.update(gc);
-			CallableUtil.run(nextFunc);
+//			nextFunc();
 		}
 	}
 
