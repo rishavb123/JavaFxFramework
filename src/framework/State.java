@@ -71,6 +71,11 @@ public class State implements Serializable
 	public void setItems(ArrayList<UIItem> items) {
 		this.items = items;
 	}
+	
+	public void clear()
+	{
+		setItems(new ArrayList<UIItem>());
+	}
 
 	/**
 	 * Adds a {@link uiitems.UIItem UIItem} to the items list
