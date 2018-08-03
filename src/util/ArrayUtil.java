@@ -87,6 +87,25 @@ public final class ArrayUtil {
 	{
 		System.out.println(newArrayListFromArray(arr));
 	}
+	
+	/**
+	 * combine two arrays into a third array
+	 * @param a the first array to combine
+	 * @param b the second array to combine
+	 * @param writeTo the array to combine the other two onto
+	 */
+	public static <E> E[] combine(E[] a, E[] b, E[] writeTo)
+	{
+		if(a.length+b.length>writeTo.length)
+			return null;
+		
+		for(int x=0;x<a.length;x++)
+			writeTo[x] = a[x];
+		for(int x=0;x<b.length;x++)
+			writeTo[x+a.length] = b[x];
+			
+		return writeTo;
+	}
 
 	
 }
