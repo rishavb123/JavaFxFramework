@@ -30,10 +30,7 @@ public class Person extends UIItem implements MouseController.Controllable, Arro
 	 */
 	public Person(double x, double y) 
 	{
-		super.x = x;
-		super.y = y;
-		super.w = Constants.dim/12.0;
-		super.h = w;
+		super(x, y, Constants.dim/12.0, Constants.dim/12.0);
 	}
 
 	/**

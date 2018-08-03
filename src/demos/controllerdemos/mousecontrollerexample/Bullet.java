@@ -27,11 +27,8 @@ public class Bullet extends UIItem {
 	 */
 	public Bullet(double x, double y, double direction)
 	{
-		super.x = x;
+		super(x, y, Constants.dim/24.0, Constants.dim/24.0);
 		this.direction = 180-direction;
-		super.y = y;
-		w = Constants.dim/24.0;
-		h = w;
 		move();
 	}
 	

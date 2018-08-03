@@ -49,7 +49,7 @@ public class Main {
 
 			@Override
 			public Void call() throws Exception {
-				State.gameState.save("res/binary/statesavingdemo.bin");
+				State.gameState.save("res/demos/binary/statesavingdemo.bin");
 				return null;
 			}
 			
