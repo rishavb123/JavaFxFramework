@@ -1,3 +1,5 @@
 tasks
 bin
 .settings
+.classpath
+.project
