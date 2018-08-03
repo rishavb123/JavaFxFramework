@@ -26,10 +26,7 @@ public class ProgressBar extends UIItem {
 	 * @param color color of the filled bar
 	 */
 	public ProgressBar(int max, double x, double y, double width, double height, Color color) {
-		super.x = x;
-		super.y = y;
-		this.w = width;
-		this.h = height;
+		super(x, y, width, height);
 		this.color = color;
 		this.max = max;
 		value = 0;

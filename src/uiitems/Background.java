@@ -19,7 +19,8 @@ public class Background extends UIItem {
 	
 	public Background()
 	{
-		w = 0;
+
+		super(0, 0, 0, 0);
 		backgroundColor = Color.rgb(0, 0, 0, 0);
 		cover = Color.rgb(0, 0, 0, 0);
 	}
@@ -30,8 +31,8 @@ public class Background extends UIItem {
 	 */
 	public Background(String path) 
 	{
+		super(0, 0, Constants.width, 0);
 		if(path!=null) image = new Image(path);
-		w = Constants.width;
 		backgroundColor = Color.rgb(0, 0, 0, 0);
 		cover = Color.rgb(0, 0, 0, 0);
 	}
@@ -42,10 +43,10 @@ public class Background extends UIItem {
 	 * @param width width of the image
 	 * @param backgroundColor color behind the image
 	 */
-	public Background(String path, int width, Color backgroundColor) 
+	public Background(String path, double width, Color backgroundColor) 
 	{
+		super(0, 0, width, 0);
 		if(path!=null) image = new Image(path);
-		super.w = w;
 		this.backgroundColor = backgroundColor;
 		this.cover = Color.rgb(0, 0, 0, 0);
 	}
@@ -57,8 +58,8 @@ public class Background extends UIItem {
 	 */
 	public Background(String path, Color cover) 
 	{
+		super(0, 0, Constants.width, 0);
 		if(path!=null) image = new Image(path);
-		w = Constants.width;
 		backgroundColor = Color.rgb(0, 0, 0, 0);
 		this.cover = cover;
 	}
@@ -70,10 +71,10 @@ public class Background extends UIItem {
 	 * @param backgroundColor the color behind the image
 	 * @param cover the color that goes over the image
 	 */
-	public Background(String path, int w, Color backgroundColor, Color cover) 
+	public Background(String path, double w, Color backgroundColor, Color cover) 
 	{
+		super(0, 0, w, 0);
 		if(path!=null) image = new Image(path);
-		this.w = w;
 		this.backgroundColor = backgroundColor;
 		this.cover = cover;
 	}

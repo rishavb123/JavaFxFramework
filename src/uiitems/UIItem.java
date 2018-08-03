@@ -20,6 +20,21 @@ public abstract class UIItem implements Serializable{
 	protected double h;
 	
 	/**
+	 * creates a UIItem
+	 * @param x initial x position
+	 * @param y initial y position
+	 * @param w initial width
+	 * @param h initial height
+	 */
+	public UIItem(double x, double y, double w, double h)
+	{
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+	}
+	
+	/**
 	 * Will draw the item
 	 * @param gc Graphics Context used to draw onto the main screen
 	 */

@@ -29,9 +29,8 @@ public class UIText extends UIItem {
 	 */
 	public UIText(String text, double x, double y, int size, FontWeight f, Color color) 
 	{
+		super(x, y, 0, 0);
 		this.text = new Text(text);
-		super.x = x;
-		super.y = y;
 		this.font = Font.font("Courier New", f, size);
 		this.text.setFont(font);
 		w = this.text.getLayoutBounds().getWidth();
