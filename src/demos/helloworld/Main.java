@@ -25,7 +25,7 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		App.begin(new Callable<Void>() {
+		App.create(new Callable<Void>() {
 
 			@Override
 			public Void call() throws Exception {

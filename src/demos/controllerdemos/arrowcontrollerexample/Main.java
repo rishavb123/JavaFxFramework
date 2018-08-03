@@ -24,7 +24,7 @@ public class Main {
 	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
-		App.begin(new Callable<Void>() {
+		App.create(new Callable<Void>() {
 
 			@Override
 			public Void call() throws Exception {
