@@ -62,14 +62,31 @@ public class App extends Application implements EventHandler<InputEvent> {
 		stage.show();
 		
 		CallableUtil.run(startFunc);
-		
+		start();
 	}
 	
+	/**
+	 * called at the start of the application from the stop method
+	 * <br>this method is meant to be overridden when a this class is sub classed
+	 */
+	public void start() {}
+	
+	/**
+	 * called at the end of the application
+	 * @see javafx.application.Application#stop()
+	 */
 	@Override
-	public void stop()
+	public final void stop()
 	{
 		CallableUtil.run(stopFunc);
+		end();
 	}
+	
+	/**
+	 * called at the end of the application from the stop method
+	 * <br>this method is meant to be overridden when a this class is sub classed
+	 */
+	public void end(){}
 	
 	/**
 	 * starts the application
@@ -77,7 +94,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 	 * @param next method to call every frame
 	 * @param args command line arguments
 	 */
-	public static void begin(Callable<Void> start, Callable<Void> next, Callable<Void> stop, String[] args)
+	public static void create(Callable<Void> start, Callable<Void> next, Callable<Void> stop, String[] args)
 	{
 		startFunc = start;
 		nextFunc = next;
