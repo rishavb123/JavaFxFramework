@@ -1,0 +1,26 @@
+Error:
+	java.lang.IllegalArgumentException: input == null!
+		at javax.imageio.ImageIO.read(Unknown Source)
+		at graphics.SpriteSheet.<init>(SpriteSheet.java:36)
+		at demos.spritedemo.Player.<init>(Player.java:32)
+		at demos.spritedemo.Main$1.call(Main.java:24)
+		at demos.spritedemo.Main$1.call(Main.java:1)
+		at util.CallableUtil.run(CallableUtil.java:24)
+		at application.App.start(App.java:64)
+		at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$161(LauncherImpl.java:863)
+		at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$174(PlatformImpl.java:326)
+		at com.sun.javafx.application.PlatformImpl.lambda$null$172(PlatformImpl.java:295)
+		at java.security.AccessController.doPrivileged(Native Method)
+		at com.sun.javafx.application.PlatformImpl.lambda$runLater$173(PlatformImpl.java:294)
+		at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+		at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+		at com.sun.glass.ui.win.WinApplication.lambda$null$147(WinApplication.java:177)
+		at java.lang.Thread.run(Unknown Source)
+
+
+If you are getting an error like this in the sprite demo or in your own project the follow these steps (for eclipse)
+	1. Right click on your project and click properties
+	2. Click Java Build Path in the left nav menu
+	3. Click the Libraries tab
+	4. Click Add External Class Folder
+	5. Navigate to and add the res folder
