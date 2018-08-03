@@ -22,5 +22,5 @@ If you are getting an error like this in the sprite demo or in your own project 
 	1. Right click on your project and click properties
 	2. Click Java Build Path in the left nav menu
 	3. Click the Libraries tab
-	4. Click Add External Class Folder
+	4. Click Add Class Folder
 	5. Navigate to and add the res folder
