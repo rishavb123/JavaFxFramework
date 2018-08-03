@@ -1,4 +1,0 @@
-create a server and client class so the developers can easily create a server and have clients connect to it
-use it to create a shared state between all connected clients that they have access to and can modify
-make multiplayer games functionality
-use code from ServerTesting project

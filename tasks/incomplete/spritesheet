@@ -1,3 +1,0 @@
-Copy the sprite sheet class from JavaFxGame and then add documentation comments
-Make Slight modifications for a more general use of the class
-Create an Action class to store spritesheets the way PlayerAction and EnemyAction did it in JavaFxGame

@@ -1,3 +1,0 @@
-create gravity support and a gravity object class that will fall in the update function
-create  a platform and block class to land on
-use similar landing methods from JavaFxGame
