@@ -1,0 +1,3 @@
+create hidden items class
+override draw method to do nothing and set it to final
+made to create an item that will not be seen
