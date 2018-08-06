@@ -89,6 +89,12 @@ public class App extends Application implements EventHandler<InputEvent> {
 	public void end(){}
 	
 	/**
+	 * called every frame of the application from the handle method in AnimateObjects
+	 * @param time 
+	 */
+	public void update(long time) {}
+	
+	/**
 	 * starts the application
 	 * @param start method to call on start
 	 * @param next method to call every frame
@@ -116,7 +122,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 	 * @see javafx.event.EventHandler#handle(javafx.scene.input.InputEvent)
 	 */
 	@Override
-	public void handle(final InputEvent event) 
+	public final void handle(final InputEvent event) 
 	{
 		if(event instanceof KeyEvent)
 		{
@@ -156,7 +162,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 	 * Main method calling launch to start the app
 	 * @param args Command Line Arguments
 	 */
-	public final static void main(String[] args)
+	public static void main(String[] args)
 	{
 		launch(args);
 	}
@@ -175,6 +181,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 		{
 			State.gameState.update(gc);
 			CallableUtil.run(nextFunc);
+			update(time);
 		}
 	}
 

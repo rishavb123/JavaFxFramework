@@ -13,14 +13,16 @@ import java.util.HashMap;
 public class GravityConfig extends Constants
 {
 	public static final double g = dim/300;
-	public static HashMap<Integer, Boolean> directions = setDirections();
+	public static HashMap<Integer, Boolean> directions = new HashMap<Integer, Boolean>() {
+		private static final long serialVersionUID = -5572127757456175760L;
+
+	{
+		put(Direction.UP, false);
+		put(Direction.DOWN, true);
+		put(Direction.LEFT, false);
+		put(Direction.RIGHT, false);
+	}};
 	
-	private static final HashMap<Integer, Boolean> setDirections() {
-		directions.put(Direction.UP, false);
-		directions.put(Direction.DOWN, true);
-		directions.put(Direction.LEFT, false);
-		directions.put(Direction.RIGHT, false);
-		return directions;
-	}
+
 	
 }

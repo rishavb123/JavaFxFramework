@@ -13,8 +13,8 @@ import uiitems.UIItem;
 public abstract class GravityItem extends UIItem implements Gravity{
 
 	private static final long serialVersionUID = -4667965665109557341L;
-	private double dx;
-	private double dy;
+	protected double dx;
+	protected double dy;
 	
 	/**
 	 * creates an Entity affected by gravity
