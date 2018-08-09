@@ -29,7 +29,7 @@ public class Main extends App {
 		UIText text = new UIText(Double.toString(Ball.pull), 1, 100, 30, FontWeight.BOLD, Color.BLUE);
 //		State.gameState.store("Pull Text", text);
 		State.gameState.track(ArrayUtil.newArrayList(
-				KeyCode.UP, KeyCode.DOWN
+				KeyCode.UP, KeyCode.DOWN, KeyCode.C
 		));
 		State.gameState.getKeyboard().get(KeyCode.UP).setOnClick(new Callable<Void>() {
 
@@ -47,6 +47,16 @@ public class Main extends App {
 			public Void call() throws Exception {
 				Ball.pull-=10;
 				text.setText(Double.toString(Ball.pull));
+				return null;
+			}
+			
+		});
+		State.gameState.getKeyboard().get(KeyCode.C).setOnClick(new Callable<Void>() {
+
+			@Override
+			public Void call() throws Exception {
+				State.gameState.clear();
+				State.gameState.add(text);
 				return null;
 			}
 			
