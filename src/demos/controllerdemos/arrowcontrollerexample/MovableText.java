@@ -30,7 +30,7 @@ public class MovableText extends UIText implements ArrowKeyController.Controllab
 	}
 
 	/**
-	 * @see controllers.ArrowKeyController#up()
+	 * @see controllers.ArrowKeyController.Controllable#up()
 	 */
 	@Override
 	public void up() {
@@ -38,7 +38,7 @@ public class MovableText extends UIText implements ArrowKeyController.Controllab
 	}
 
 	/**
-	 * @see controllers.ArrowKeyController#down()
+	 * @see controllers.ArrowKeyController.Controllable#down()
 	 */
 	@Override
 	public void down() {
@@ -46,7 +46,7 @@ public class MovableText extends UIText implements ArrowKeyController.Controllab
 	}
 
 	/**
-	 * @see controllers.ArrowKeyController#right()
+	 * @see controllers.ArrowKeyController.Controllable#right()
 	 */
 	@Override
 	public void right() {
@@ -54,7 +54,7 @@ public class MovableText extends UIText implements ArrowKeyController.Controllab
 	}
 
 	/**
-	 * @see controllers.ArrowKeyController#left()
+	 * @see controllers.ArrowKeyController.Controllable#left()
 	 */
 	@Override
 	public void left() {

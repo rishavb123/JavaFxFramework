@@ -27,6 +27,8 @@ public class Person extends UIItem implements MouseController.Controllable, Arro
 	
 	/**
 	 * creates a person object at position (x, y)
+	 * @param x initial x position
+	 * @param y initial y position
 	 */
 	public Person(double x, double y) 
 	{

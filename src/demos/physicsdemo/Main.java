@@ -23,7 +23,6 @@ public class Main extends App {
 
 	/**
 	 * called on start of the application
-	 * @see application.App@start()
 	 */
 	@Override
 	public void start()

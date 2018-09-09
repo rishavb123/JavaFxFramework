@@ -21,7 +21,7 @@ public class Main
 {	
 	/**
 	 * main method for hello world project
-	 * @param args
+	 * @param args cmd args
 	 */
 	public static void main(String[] args)
 	{
