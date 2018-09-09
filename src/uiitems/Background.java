@@ -67,7 +67,7 @@ public class Background extends UIItem {
 	/**
 	 * creates a background object with all attributes
 	 * @param path the image path
-	 * @param width the image width
+	 * @param w the image width
 	 * @param backgroundColor the color behind the image
 	 * @param cover the color that goes over the image
 	 */

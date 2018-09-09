@@ -163,7 +163,7 @@ public class State implements Serializable
 
 	/**
 	 * sets storage
-	 * @param store the store to set
+	 * @param storage the store to set
 	 */
 	public void setStorage(HashMap<Object, Object> storage) {
 		this.storage = storage;

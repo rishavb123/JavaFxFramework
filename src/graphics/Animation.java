@@ -29,8 +29,6 @@ public class Animation {
 	 * @param frames the array of frames
 	 * @param delay the delay between frames
 	 * @param hold whether or not to hold on the last frame
-	 * @param start where to start in the frames array for the animation
-	 * @param stop where to stop in the frames array for the animation
 	 */
 	public Animation(BufferedImage[] frames, long delay, boolean hold) {
 		this.frames = frames;

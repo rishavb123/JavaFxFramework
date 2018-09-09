@@ -93,6 +93,7 @@ public final class ArrayUtil {
 	 * @param a the first array to combine
 	 * @param b the second array to combine
 	 * @param writeTo the array to combine the other two onto
+	 * @return the combined array
 	 */
 	public static <E> E[] combine(E[] a, E[] b, E[] writeTo)
 	{

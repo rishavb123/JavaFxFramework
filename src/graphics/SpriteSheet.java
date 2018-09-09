@@ -24,8 +24,6 @@ public class SpriteSheet {
 	/**
 	 * creates a sprite sheet object to make animations
 	 * @param path the image path for the entire sprite sheet
-	 * @param delay the millisecond delay between each frame
-	 * @param hold whether or not to hold the animation at the last frame
 	 * @param framesWidth the number of frames from side to side
 	 * @param framesHeight the number of frames from top to bottom
 	 */
