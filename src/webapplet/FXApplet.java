@@ -29,7 +29,6 @@ public class FXApplet extends JApplet {
     /**
      * This method is declared final and sets-up the JavaFX environment.
      * In order to add initialization code, override {@link #initApplet()}.
-     * <p></p>
      * <b>Original Description:</b> <br>
      * {@inheritDoc}
      */
@@ -66,7 +65,7 @@ public class FXApplet extends JApplet {
      * Add custom initialization code here. <br>
      * This method is called by FXApplet once the {@link java.applet.Applet#init() init} method was invoked (in order
      * to signal that the applet has been loaded) and
-     * the {@link #scene scene} & {@link #root root} fields has been set-up.
+     * the {@link #scene scene} and {@link #root root} fields has been set-up.
      * @see java.applet.Applet#init()
      */
     public void initApplet() {

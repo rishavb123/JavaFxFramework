@@ -90,7 +90,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 	
 	/**
 	 * called every frame of the application from the handle method in AnimateObjects
-	 * @param time 
+	 * @param time current millisecond time
 	 */
 	public void update(long time) {}
 	
@@ -99,6 +99,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 	 * @param start method to call on start
 	 * @param next method to call every frame
 	 * @param args command line arguments
+	 * @param stop method to call on stop
 	 */
 	public static void create(Callable<Void> start, Callable<Void> next, Callable<Void> stop, String[] args)
 	{
@@ -119,7 +120,7 @@ public class App extends Application implements EventHandler<InputEvent> {
 	
 	/**
 	 * Method to handle an Events
-	 * @see javafx.event.EventHandler#handle(javafx.scene.input.InputEvent)
+	 * @see javafx.event.EventHandler#handle(T)
 	 */
 	@Override
 	public final void handle(final InputEvent event) 
