@@ -257,6 +257,7 @@ public class State implements Serializable
 	/**
 	 * load in a state from a file
 	 * @param path the file path
+	 * @return whether it loaded successfully or not
 	 */
 	public boolean load(String path)
 	{
