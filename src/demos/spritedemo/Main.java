@@ -3,6 +3,8 @@ package demos.spritedemo;
 import java.util.concurrent.Callable;
 
 import application.App;
+import configurations.Constants;
+import controllers.ArrowKeyController;
 import framework.State;
 
 /**
@@ -11,6 +13,7 @@ import framework.State;
  *
  */
 public class Main {
+	
 
 	/**
 	 * main method
@@ -21,7 +24,10 @@ public class Main {
 
 			@Override
 			public Void call() throws Exception {
-				State.gameState.add(new Player(100,100,100,100));
+				Player p = new Player(Constants.wpercent(10),Constants.hpercent(10),Constants.wpercent(10),Constants.hpercent(20));
+				ArrowKeyController c = new ArrowKeyController(p);
+				c.connect();
+				State.gameState.add(p);
 				return null;
 			}
 			

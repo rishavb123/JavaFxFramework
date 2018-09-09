@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import uiitems.gravityitems.GravityItem;
 
 /**
+ * Ball class
  * @author Bhagat
  *
  */

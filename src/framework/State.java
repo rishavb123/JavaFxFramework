@@ -5,13 +5,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import configurations.Direction;
 import input.Key;
 import input.Mouse;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import uiitems.Background;
 import uiitems.UIItem;
+import uiitems.interactiveitems.Interactive;
 import util.ObjectSaver;
+import util.RectUtil;
 
 /**
  * A class to store the game state.
@@ -52,7 +55,28 @@ public class State implements Serializable
 			key.update();
 		background.update(gc);
 		for(UIItem item: items)
+		{
 			item.update(gc);
+			if(item instanceof Interactive)
+				for(UIItem hit: items)
+					if(hit != item)
+						switch(RectUtil.intersects(item.getRect(), hit.getRect()))
+						{
+							case Direction.UP:
+								((Interactive) item).touchAbove(hit);
+								break;
+							case Direction.DOWN:
+								((Interactive) item).touchBelow(hit);
+								break;
+							case Direction.LEFT:
+								((Interactive) item).touchLeft(hit);
+								break;
+							case Direction.RIGHT:
+								((Interactive) item).touchRight(hit);
+								break;
+						}
+						
+		}
 	}
 	
 	/**
@@ -234,14 +258,15 @@ public class State implements Serializable
 	 * load in a state from a file
 	 * @param path the file path
 	 */
-	public void load(String path)
+	public boolean load(String path)
 	{
 		try {
 			State s = (State)ObjectSaver.read(path);
 			this.setItems(s.getItems());
 			this.setStorage(s.getStorage());
+			return true;
 		} catch (ClassNotFoundException | IOException e) {
-			e.printStackTrace();
+			return false;
 		}
 	}
 	

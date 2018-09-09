@@ -1,5 +1,8 @@
 package controllers;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
@@ -30,4 +33,19 @@ public abstract class Controller<E> implements Serializable {
 	public boolean isConnected() {
 		return connected;
 	}
+	
+	@SuppressWarnings("unchecked")
+	private void readObject(ObjectInputStream aInputStream) throws ClassNotFoundException, IOException
+    {      
+        connected = aInputStream.readBoolean();
+        objToControl = (E) aInputStream.readObject();
+        if(connected)
+        	connect();
+    }
+ 
+    private void writeObject(ObjectOutputStream aOutputStream) throws IOException
+    {
+        aOutputStream.writeBoolean(connected);
+        aOutputStream.writeObject(objToControl);
+    }
 }

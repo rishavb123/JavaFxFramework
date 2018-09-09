@@ -102,6 +102,34 @@ public abstract class UIItem implements Serializable{
 	 * @return the height
 	 */
 	public double getHeight() {return h;}
+
+	/**
+	 * @param x the x to set
+	 */
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	/**
+	 * @param y the y to set
+	 */
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	/**
+	 * @param w the w to set
+	 */
+	public void setWidth(double w) {
+		this.w = w;
+	}
+
+	/**
+	 * @param h the h to set
+	 */
+	public void setHeight(double h) {
+		this.h = h;
+	}
 	
 
 }

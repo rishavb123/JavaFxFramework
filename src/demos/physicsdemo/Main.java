@@ -9,7 +9,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.text.FontWeight;
 import uiitems.UIText;
+import uiitems.interactiveitems.Block;
 import util.ArrayUtil;
+import util.GraphicsUtil;
 import util.NumberUtil;
 
 /**
@@ -70,13 +72,17 @@ public class Main extends App {
 			b.setDy(NumberUtil.rand(-40, 40));
 			State.gameState.add(b);
 		}
+		
+		for(int i=0; i<200; i+=10)
+			State.gameState.add(new Block(Constants.hpercent(i), Constants.hpercent(90), Constants.hpercent(10), Constants.hpercent(10), Color.ALICEBLUE));
+			
 		State.gameState.getMouse().setOnPress(new Callable<Void>() {
 
 			@Override
 			public Void call() throws Exception {
 				for(int i=0; i<100; i++)
 				{
-					Ball b = new Ball(NumberUtil.rand(0, (int)Constants.width-20), NumberUtil.rand(0, (int)Constants.height-20), 20, Color.rgb(NumberUtil.rand(0, 255), NumberUtil.rand(0, 255), NumberUtil.rand(0, 255)));;
+					Ball b = new Ball(NumberUtil.rand(0, (int)Constants.width-20), NumberUtil.rand(0, (int)Constants.height-20), 20, GraphicsUtil.randomColor());
 					b.setDx(NumberUtil.rand(-20, 20));
 					b.setDy(NumberUtil.rand(-40, 40));
 					State.gameState.add(b);
